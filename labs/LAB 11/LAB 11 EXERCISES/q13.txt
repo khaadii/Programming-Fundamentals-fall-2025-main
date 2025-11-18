@@ -1,0 +1,11 @@
+Consider the following program:
+#include <stdio.h>
+int main( void ) {
+int *p1;
+char *p2;
+p2=p1;
+}
+
+Will the program compile successfully without warnings? Why and why not?
+
+ANSWER:  no , coz P2 can caontain the address of some character variable and not the address of a integral variable as p1.

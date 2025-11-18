@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int i,j,k;
+	for(i=1;i<=9;i+=2)
+	{
+		for(j=1;j<=(9-i)/2;j++)
+		printf(" ");
+		for(k=1;k<=i;k++)
+		printf("*");
+		printf("\n");
+	}
+	
+	
+	for(i=7;i>=1;i-=2)
+	{
+		for(j=1;j<=(9-i)/2;j++)
+		printf(" ");
+		for(k=1;k<=i;k++)
+		printf("*");
+		printf("\n");
+		
+	}
+}
+

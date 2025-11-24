@@ -5,6 +5,11 @@ int main()
 	int num,div,i,j,left,right;
 	printf("\nEnter a number:  ");
 	scanf("%d",&num);
+	if(num<INT_MIN || num>INT_MAX)
+	{
+		printf("number is out of range!!");
+		return 0;
+	}
 	char ch[100];
 	sprintf(ch,"%d",num);
 	for(i=0;i<((strlen(ch))/2);i++)
@@ -35,3 +40,4 @@ int main()
 	return 0;
 
 }
+

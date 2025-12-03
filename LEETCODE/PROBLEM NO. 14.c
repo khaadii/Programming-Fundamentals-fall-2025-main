@@ -1,7 +1,7 @@
 #include<stdio.h>
-bool isPerfectSquare(int num) {
-    int i;
-    for(i=1;i<=num;i++)
+int isPerfectSquare(int num) {
+    long int i;
+    for(i=0;i<=num;i++)
     {
         if(i*i==num)
         return 1;
@@ -20,4 +20,5 @@ int main()
 	else
 	printf("\nFalse");
 	
-}
+} //now finalized.. fullyyyyyyyyyyyyyyyyyy
+

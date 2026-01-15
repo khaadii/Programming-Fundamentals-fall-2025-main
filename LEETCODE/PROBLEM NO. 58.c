@@ -1,0 +1,118 @@
+#include<stdio.h>
+#include<stdlib.h>
+ // Definition for singly-linked list.
+  struct ListNode {
+      int val;
+      struct ListNode *next;
+  };
+  struct ListNode* middleNode(struct ListNode* head) 
+  {
+  	 int count=0;
+ int n=0;
+ struct ListNode* temp=head;
+ while(temp!=NULL)
+ {
+ 	count++;
+ 	temp=temp->next;
+ }  
+ 
+ struct ListNode* headd=NULL;
+ struct ListNode* tail;
+ if(count%2==0)
+ {
+ 	while(head!=NULL)
+	 {
+	 	n++;
+		 if(n>=(count/2)+1)
+		 {
+		 	struct ListNode* newnode=malloc(sizeof(struct ListNode));
+			 newnode->val=head->val;
+			 newnode->next=NULL;
+			 if(headd==NULL)
+			 {
+			 	headd=newnode;
+				tail=newnode;	
+			 }	
+			 else
+			 {
+			 	tail->next=newnode;
+			 	tail=newnode;
+			 }
+			 
+		 }
+		 head=head->next;	
+	 }	
+ }
+ else
+ {
+ 			while(head!=NULL)
+	 {
+	 	n++;
+		 if(n>=(count+1)/2)
+		 {
+		 	struct ListNode* newnode=malloc(sizeof(struct ListNode));
+			 newnode->val=head->val;
+			 newnode->next=NULL;
+			 if(headd==NULL)
+			 {
+			 	headd=newnode;
+				tail=newnode;	
+			 }	
+			 else
+			 {
+			 	tail->next=newnode;
+			 	tail=newnode;
+			 }
+			 
+		 }	
+		 head=head->next;
+	 }	
+ }
+ return headd;
+  }
+int main()
+{
+int n,size,i;
+printf("\nEnter the size of the list:  (how many nodes!!?)");
+scanf("%d",&size);
+struct ListNode* head=NULL;
+struct ListNode* tail;
+for(i=0;i<size;i++)
+{
+	struct ListNode* newnode= malloc(sizeof(struct ListNode));
+	scanf("%d",&newnode->val);
+	newnode->next=NULL;
+	if(head==NULL)
+	{
+		head=newnode;
+		tail=newnode;
+	}
+	else
+	{
+		tail->next=newnode;
+		tail=newnode;
+	}	
+}
+
+struct ListNode* ans= middleNode(head);
+struct ListNode* temp;
+temp=ans;
+while(ans!=NULL)
+{
+	printf("%d ",ans->val);
+	ans=ans->next;
+} 
+while(temp!=NULL)
+{
+	struct ListNode* zz=temp->next;
+	free(temp);
+	temp=zz;
+} 
+while(head!=NULL)
+{
+	struct ListNode* zz=head->next;
+	free(head);
+	head=zz;
+}
+return 0;
+}

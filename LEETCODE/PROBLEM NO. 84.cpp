@@ -35,3 +35,4 @@ int main()
 	printf("\nThe result is:  %d",ans);
 	return 0;
 }
+//time limit exceeding on leetcode

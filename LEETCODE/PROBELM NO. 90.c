@@ -1,4 +1,4 @@
-#include<string.h>//sorry :) editing just to maintain the streak(to avoid the miss of greenry)
+#include<string.h>//sorry :) editing just to maintain the streak(to avoid the miss of greenry) once again!!
 char * defangIPaddr(char * address)
 {
 	int i,k=0;
